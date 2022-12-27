@@ -28,6 +28,11 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         io.emit('message', 'A user has left the chat')
     })
+
+    // Listen to chat message
+    socket.on('chatMessage', (msg) => {
+        io.emit('message', msg)
+    })
 })
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`))
