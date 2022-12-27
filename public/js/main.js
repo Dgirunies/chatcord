@@ -7,9 +7,9 @@ const socket = io()
 function outputMessage(message) {
     const div = document.createElement('div')
     div.classList.add('message')
-    div.innerHTML = `<p class="meta">Brad <span>9:12pm</span></p>
+    div.innerHTML = `<p class="meta">${message.userName} <span>${message.time}</span></p>
     <p class="text">
-        ${message}
+        ${message.text}
     </p>`
     chatMessages.appendChild(div)
 }
